@@ -22,13 +22,14 @@ source $HOME/.bash_profile
 [ ! -d ~/go/bin ] && mkdir -p ~/go/bin
 ```
 
-# set vars
+**set vars**
+```
 echo "export WALLET="wallet"" >> $HOME/.bash_profile
 echo "export MONIKER="test"" >> $HOME/.bash_profile
 echo "export DORA_CHAIN_ID="vota-ash"" >> $HOME/.bash_profile
 echo "export DORA_PORT="42"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
-
+```
 # download binary
 cd $HOME
 rm -rf doravota
