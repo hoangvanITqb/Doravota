@@ -30,13 +30,15 @@ echo "export DORA_CHAIN_ID="vota-ash"" >> $HOME/.bash_profile
 echo "export DORA_PORT="42"" >> $HOME/.bash_profile
 source $HOME/.bash_profile
 ```
-# download binary
+**download binary**
+```
 cd $HOME
 rm -rf doravota
 git clone https://github.com/DoraFactory/doravota.git
 cd doravota
 git checkout 0.4.1
 make install
+```
 
 # config and init app
 dorad config node tcp://localhost:${DORA_PORT}657
