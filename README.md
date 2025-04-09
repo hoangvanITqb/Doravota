@@ -54,11 +54,13 @@ wget -O $HOME/.dora/config/genesis.json https://server-5.itrocket.net/mainnet/do
 wget -O $HOME/.dora/config/addrbook.json  https://server-5.itrocket.net/mainnet/doravota/addrbook.json
 ```
 
-# set seeds and peers
+**set seeds and peers**
+```
 SEEDS="4ec0eb59ae35418a9bfa3df3783bad4f372b49c0@doravota-mainnet-seed.itrocket.net:42656"
 PEERS="d6edfdb5eae3565a4af1ce35fd2c03084b8c3ef1@doravota-mainnet-peer.itrocket.net:42656,c4d2720aaad29c75edf429fbb1503de4cec24713@18.153.216.56:26656,02631d493abc11154bd995409d4f59672cf18e48@141.94.141.165:26556,fab9ddabc4102402a2a29d85fbab22a57a0181c5@141.95.156.129:26656,dffb8ae062a0fcad6ec3e8241e62bb32c4c9a272@149.50.101.171:10656,34385f7cb80fdf83a07977355aaab7dfd91f0be6@65.109.104.72:25356,a92953b8dff4f52f688b54ab9657195feda3df6c@141.94.73.39:56096,8dd780be4bc1471a999d595c35a2b9d53bf49993@65.109.53.24:42656,d63870b465e9385160cc8e7e4500fa525453a259@46.4.32.57:26656,2396e9f3c14c205be6271d6a520fad12d77a776a@65.108.238.29:25356,e1b058e5cfa2b836ddaa496b10911da62dcf182e@169.155.169.202:26656"
 sed -i -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*seeds *=.*/seeds = \"$SEEDS\"/}" \
        -e "/^\[p2p\]/,/^\[/{s/^[[:space:]]*persistent_peers *=.*/persistent_peers = \"$PEERS\"/}" $HOME/.dora/config/config.toml
+```
 
 # set custom ports in app.toml
 sed -i.bak -e "s%:1317%:${DORA_PORT}317%g;
