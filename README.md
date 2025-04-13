@@ -86,10 +86,13 @@ s%:26656%:${DORA_PORT}656%g;
 s%^external_address = \"\"%external_address = \"$(wget -qO- eth0.me):${DORA_PORT}656\"%;
 s%:26660%:${DORA_PORT}660%g" $HOME/.dora/config/config.toml
 ```
-# config pruning
+
+**config pruning**
+```
 sed -i -e "s/^pruning *=.*/pruning = \"custom\"/" $HOME/.dora/config/app.toml 
 sed -i -e "s/^pruning-keep-recent *=.*/pruning-keep-recent = \"100\"/" $HOME/.dora/config/app.toml
 sed -i -e "s/^pruning-interval *=.*/pruning-interval = \"19\"/" $HOME/.dora/config/app.toml
+```
 
 # set minimum gas price, enable prometheus and disable indexing
 sed -i 's|minimum-gas-prices =.*|minimum-gas-prices = "100000000000peaka"|g' $HOME/.dora/config/app.toml
