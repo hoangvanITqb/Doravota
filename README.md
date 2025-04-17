@@ -118,14 +118,15 @@ LimitNOFILE=65535
 WantedBy=multi-user.target
 EOF
 ```
-# reset and download snapshot
+**reset and download snapshot**
+```
 dorad tendermint unsafe-reset-all --home $HOME/.dora
 if curl -s --head curl https://server-5.itrocket.net/mainnet/doravota/doravota_2025-03-30_9095115_snap.tar.lz4 | head -n 1 | grep "200" > /dev/null; then
   curl https://server-5.itrocket.net/mainnet/doravota/doravota_2025-03-30_9095115_snap.tar.lz4 | lz4 -dc - | tar -xf - -C $HOME/.dora
     else
   echo "no snapshot found"
 fi
-
+```
 # enable and start service
 sudo systemctl daemon-reload
 sudo systemctl enable dorad
