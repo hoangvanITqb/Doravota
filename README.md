@@ -127,7 +127,9 @@ if curl -s --head curl https://server-5.itrocket.net/mainnet/doravota/doravota_2
   echo "no snapshot found"
 fi
 ```
-# enable and start service
+
+**enable and start service**
+```
 sudo systemctl daemon-reload
 sudo systemctl enable dorad
 sudo systemctl restart dorad && sudo journalctl -u dorad -fo cat
@@ -135,6 +137,8 @@ Automatic Installation
 pruning: custom: 100/0/19 | indexer: null
 
 source <(curl -s https://itrocket.net/api/mainnet/doravota/autoinstall/)
+```
+
 Create wallet
 # to create a new wallet, use the following command. don’t forget to save the mnemonic
 dorad keys add $WALLET
