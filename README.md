@@ -185,20 +185,8 @@ while true; do
 done
 ```
 
-Create validator
-Moniker
-Identity
-Details
-I love blockchain ❤️
-Amount, peaka
-1000000
-Commission rate
-0.1
-Commission max rate
-0.2
-Commission max change rate
-0.01
-Website
+**Create validator**
+```
 dorad tx staking create-validator \
 --amount 1000000peaka \
 --from $WALLET \
@@ -214,6 +202,8 @@ dorad tx staking create-validator \
 --chain-id vota-ash \
 --gas auto --gas-adjustment 1.5 --gas-prices 100000000000peaka \
 -y
+```
+
 Monitoring
 If you want to have set up a monitoring and alert system use our cosmos nodes monitoring guide with tenderduty
 
