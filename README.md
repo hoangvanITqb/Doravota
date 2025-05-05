@@ -228,10 +228,13 @@ sudo ufw allow ${DORA_PORT}656/tcp
 sudo ufw enable
 ```
 
-Delete node
+**Delete node**
+```
 sudo systemctl stop dorad
 sudo systemctl disable dorad
 sudo rm -rf /etc/systemd/system/dorad.service
 sudo rm $(which dorad)
 sudo rm -rf $HOME/.dora
+```
+
 sed -i "/DORA_/d" $HOME/.bash_profile
